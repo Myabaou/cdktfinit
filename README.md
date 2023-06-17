@@ -19,6 +19,13 @@ macOSユーザーの場合、Homebrewを使用して`infracost`をインスト�
 brew install infracost
 ```
 
+### stateファイルの管理
+stateファイルの管理はS3バケットを利用している前提になるので
+予めS3バケットを作成しておく必要があります。
+
+作成後　`cdktf.json`の terraformBackend bucketの値を
+作成したバケットに変更してください。
+
 ## 設定
 
 1. `aws-sample`プロファイルを設定してAWS SSOプロファイルをセットアップします。
@@ -120,10 +127,6 @@ make _ENV=stg _TF=true "state list"
 make _ENV=stg _TF=true "import aws_cloudfront_distribution.Cloudfront EXXXXX"
 ```
 
-
-
-
-これらのコマンドは、指定したTerraformまたはcdktfコマンドを対応する環境（`hotfix`、`stg`、`prd`）で実行します。
 
 **注意:** `deploy`、`apply`、`diff`、または`plan`コマンドの実行中には、`infracost`コマンドも自動的に呼び出されます。
 
