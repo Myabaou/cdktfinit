@@ -1,0 +1,22 @@
+{
+  "language": "typescript",
+  "app": "npx ts-node main.ts",
+  "projectId": "c8f8fecc-e069-42a3-b673-2511d9f474f2",
+  "sendCrashReports": "false",
+  "terraformProviders": [
+    "hashicorp/aws@~>5.0"
+  ],
+  "terraformModules": [],
+  "context": {
+    "excludeStackIdFromLogicalIds": "true",
+    "allowSepCharsInLogicalIds": "true"
+  },
+  "terraformBackend": {
+    "s3": {
+      "bucket": "cdkforterraform-sample-bucket",
+      "region": "us-west-2",
+      "encrypt": true
+    }
+  },
+  "projectid": "sample-project"
+}
