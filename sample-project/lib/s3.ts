@@ -15,6 +15,6 @@ export function s3sample(scope: Construct, envConfig: EnvironmentConfig) {
 	const targetEnvironment = `${process.env.ENV_ID}`;
 
 	new S3Bucket(scope, 'S3Bucket', {
-		bucket: `hanzo-cloudfront-${envConfig[targetEnvironment].env}-log`,
+		bucket: `sampleproject-${envConfig[targetEnvironment].env}-log`,
 	});
 }
